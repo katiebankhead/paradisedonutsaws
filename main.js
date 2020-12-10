@@ -23,7 +23,7 @@ function clearFilter(){
 	$cat_info.html("");
 	$cat_info
 		.attr("data-showing", "not_showing")
-	$filter_type.text("Showing all donuts");
+	// $filter_type.text("Showing all donuts");
 	//do new search
 	postRequest("all");
 }
@@ -59,17 +59,13 @@ function showCats(data_arr){
 		imgPath = "";
 	
 		for(var i_int = 0; i_int < data_arr.length; i_int += 1){
-		console.log(data_arr[i_int])
 		donutName  = data_arr[i_int].name.S;
 		imgPath = data_arr[i_int].key.S;
-		// donutName  = data_arr[i_int].name.S || data_arr[i_int].name;
-		// imgPath = data_arr[i_int].key.S || data_arr[i_int].key
 
 		html_str += '<article>';
 		html_str += 	'<h4>' + donutName + '</h4>';
 		html_str += 	'<figure>';
 		html_str += 		'<img alt="this is a picture of ' +  donutName + ' " src="img/krispykremedonuts/' + donutName + 'aspx.jpg" width="300" height="300" />'; 
-		// html_str += 		'<figcaption>' + notable_features_str + '</figcaption>';
 		html_str += 	'</figure>';
 		html_str += '</article>';
 
@@ -101,37 +97,3 @@ $(document).on("change", "[data-action='choose_breed']", submitBreed);
 
 //onm load
 postRequest("All");
-
-// function showCats(data_arr){
-// 	var 
-// 		html_str = '',
-// 		petname_str = "",
-// 		notable_features_str = "",
-// 		gender_str = "",
-// 		// date_str = "",
-// 		filter_str = $breed_select.val();
-// 	for(var i_int = 0; i_int < data_arr.length; i_int += 1){
-// 		petname_str = data_arr[i_int].petname.S || data_arr[i_int].petname;
-// 		gender_str = data_arr[i_int].gender.S || data_arr[i_int].gender;
-// 		notable_features_str = data_arr[i_int].notable_features.S || data_arr[i_int].notable_features;
-// 		// date_str = new Date(data_arr[i_int].data_found.S).toLocaleDateString();
-// 		html_str += '<article>';
-// 		html_str += 	'<h4>' + petname_str + ' : ' + gender_str + '</h4>';
-// 		// html_str += '<h5>Found:' + date_str + '</h5>';
-// 		html_str += 	'<figure>';
-// 		html_str += 		'<img alt="this is a picture of ' +  petname_str + ' " src="images/' + petname_str.toLowerCase() + '.png" width="300" height="300" />'; 
-// 		html_str += 		'<figcaption>' + notable_features_str + '</figcaption>';
-// 		html_str += 	'</figure>';
-// 		html_str += '</article>';
-// 	}
-// 	$filter_type.text("Showing " + filter_str.toLowerCase() + " cats");
-// 	$cat_info
-// 		.attr("data-showing", "showing")
-// 		.append(html_str);
-// 	if(data_arr.length === 0){
-// 		$cat_info.html('<h6>No donuts found!</h6>');
-// 	}
-
-// }
-
-// html_str += 		'<img alt="this is a picture of ' +  donutName + ' " src=`${imgPath}` width="300" height="300" />'; 
