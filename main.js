@@ -56,16 +56,18 @@ function showCats(data_arr){
 	var 
 		html_str = '',
 		donutName = "",
+		newName = "",
 		imgPath = "";
 	
 		for(var i_int = 0; i_int < data_arr.length; i_int += 1){
 		donutName  = data_arr[i_int].name.S;
 		imgPath = data_arr[i_int].key.S;
+		newName = data_arr[i_int].new_name.S;
 
 		html_str += '<article>';
-		html_str += 	'<h4>' + donutName + '</h4>';
+		html_str += 	'<h4>' + newName + '</h4>';
 		html_str += 	'<figure>';
-		html_str += 		'<img alt="this is a picture of ' +  donutName + ' " src="img/krispykremedonuts/' + donutName + 'aspx.jpg" width="300" height="300" />'; 
+		html_str += 		'<img alt="this is a picture of ' +  newName + ' " src="img/krispykremedonuts/' + donutName + 'aspx.jpg" width="300" height="300" />'; 
 		html_str += 	'</figure>';
 		html_str += '</article>';
 
